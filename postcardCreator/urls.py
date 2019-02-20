@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from postcardCreator.controllers.viewControllers.vcTakePhoto import takePhoto
+from postcardCreator.controllers.viewControllers.vcShowTest import showTest
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',takePhoto ),
+    path('test/', showTest)
 ]
