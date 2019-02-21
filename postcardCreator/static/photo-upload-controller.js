@@ -14,9 +14,26 @@ let messageInput = document.getElementById('message');
 let canvasClicked = false;
 let firstClick = false;
 
-messageInput.addEventListener('change', function(){
-	console.log("Typing detected");
-});
+
+let createFillTexts = function(lines){
+	let count = 0;
+	let current = context;
+	lines.forEach((event) =>{
+		context.fillText(event, photoViewer.width/2+(count*2),  photoViewer.height/2+(count*20))
+		count++;
+	});
+}
+
+messageInput.oninput = function(event){
+	console.log("lolo");
+	console.log(event);
+	context.clearRect(0,0,photoViewer.width, photoViewer.height);
+	context.drawImage(image, photoPosition.left, photoPosition.top);
+	context.textAlign = "center";
+	context.font = "20px monospace";
+	createFillTexts(this.value.split('\n'));
+	//context.fillText(this.value, photoViewer.width/2, photoViewer.height/2);
+}
 
 document.getElementById('load-image').addEventListener('click', function(){
 	console.log("load image");
