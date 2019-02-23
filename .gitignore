@@ -133,7 +133,7 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
+*.png
 # Pyre type checker
 .pyre/
 © 2019 GitHub, Inc.
